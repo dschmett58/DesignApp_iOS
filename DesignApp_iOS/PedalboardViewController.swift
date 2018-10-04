@@ -8,8 +8,10 @@
 
 import UIKit
 
-@IBDesignable class PedalboardViewController: UIViewController, UITableViewDataSource
+@IBDesignable class PedalboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
+    var pedalName = "none"
+    
     // PEDAL NAMES
     let pedalNames: [[String]] =
     [
@@ -43,11 +45,12 @@ import UIKit
     {
         let cell = UITableViewCell()
         
-        let pedalName = pedalNames[indexPath.section][indexPath.row]
+        let pedalLabel = pedalNames[indexPath.section][indexPath.row]
         let pedalIcon = pedalIcons[indexPath.section][indexPath.row]
         
-        cell.textLabel?.text = pedalName
+        cell.textLabel?.text = pedalLabel
         cell.imageView?.image = pedalIcon
+        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
         return cell
     }
@@ -73,6 +76,13 @@ import UIKit
         }
         
         return section_title
+    }
+    
+    // OnClick functionality
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        pedalName = pedalNames[indexPath.section][indexPath.row]
+        print(pedalName)
     }
     
     // MARK: special stuff
