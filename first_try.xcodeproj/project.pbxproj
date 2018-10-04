@@ -199,13 +199,16 @@
 				TargetAttributes = {
 					37C8A17E213F0F2C004AE182 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					37C8A194213F0F2E004AE182 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 37C8A17E213F0F2C004AE182;
 					};
 					37C8A19F213F0F2E004AE182 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 37C8A17E213F0F2C004AE182;
 					};
 				};
@@ -446,7 +449,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ECE.first-try";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -463,7 +466,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ECE.first-try";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -482,7 +485,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ECE.first-tryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/first_try.app/first_try";
 			};
@@ -502,7 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ECE.first-tryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/first_try.app/first_try";
 			};
@@ -521,7 +524,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ECE.first-tryUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = first_try;
 			};
@@ -540,7 +543,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ECE.first-tryUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = first_try;
 			};
