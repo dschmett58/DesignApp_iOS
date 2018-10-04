@@ -10,22 +10,15 @@ import UIKit
 
 class PedalViewController: UIViewController
 {
-    //MARK: ----- FIRST SLIDER -----
-    
-    // text field for slider value
-    @IBOutlet weak var sliderTime_valueText: UITextField!
+    // label for slider value
+    @IBOutlet weak var sliderValue: UILabel!
+    @IBOutlet weak var sliderLabel: UILabel!
     
     // update text field with current value
     @IBAction func sliderTime_changed(_ sender: UISlider)
     {
         let val = floorf(sender.value)
-        sliderTime_valueText.text = "\(val)"
-    }
-    
-    // update slider value with user-entered value
-    @IBAction func sliderText_updateValue(_ sender: UITextField)
-    {
-        // TODO
+        sliderValue.text = String(format: "%.0f", val)
     }
     
     // MARK: special stuff

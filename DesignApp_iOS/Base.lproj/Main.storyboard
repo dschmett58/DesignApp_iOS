@@ -110,7 +110,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="UY3-bS-e0h">
                                                 <rect key="frame" x="78" y="0.0" width="219" height="31"/>
                                                 <connections>
-                                                    <action selector="sliderTime_changed:" destination="8rJ-Kc-sve" eventType="valueChanged" id="lEq-mi-3Tu"/>
+                                                    <action selector="sliderTime_changed:" destination="8rJ-Kc-sve" eventType="valueChanged" id="tgf-PO-vjs"/>
                                                 </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD0-3l-EK0">
@@ -152,6 +152,10 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pedal" image="Pedal" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="sliderLabel" destination="6n5-5R-MdW" id="UaO-pe-SFB"/>
+                        <outlet property="sliderValue" destination="VD0-3l-EK0" id="0ju-Ho-Fsw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
