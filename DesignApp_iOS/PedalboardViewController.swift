@@ -81,8 +81,12 @@ import UIKit
     // OnClick functionality
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        // set pedal name
         pedalName = pedalNames[indexPath.section][indexPath.row]
         print(pedalName)
+        
+        // change view (tab over)
+        self.tabBarController?.selectedIndex = 1
     }
     
     // MARK: special stuff

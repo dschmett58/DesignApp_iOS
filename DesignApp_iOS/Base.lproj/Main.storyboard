@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gK9-n3-p2v">
-                                <rect key="frame" x="0.0" y="84" width="375" height="534"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="NMx-qj-QY1"/>
@@ -154,8 +154,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Pedal" image="Pedal" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="pedalName" destination="tXB-o3-PiV" id="3Sf-8f-4e5"/>
                         <outlet property="sliderLabel" destination="6n5-5R-MdW" id="UaO-pe-SFB"/>
                         <outlet property="sliderValue" destination="VD0-3l-EK0" id="0ju-Ho-Fsw"/>
+                        <segue destination="9pv-A4-QxB" kind="showDetail" identifier="select" id="mm1-wB-qWF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -187,4 +189,7 @@
         <image name="Pedalboard" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="mm1-wB-qWF"/>
+    </inferredMetricsTieBreakers>
 </document>

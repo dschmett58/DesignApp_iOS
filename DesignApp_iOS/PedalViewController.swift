@@ -10,9 +10,12 @@ import UIKit
 
 class PedalViewController: UIViewController
 {
+    var pedalTitle = "(select a pedal)"
+    
     // label for slider value
     @IBOutlet weak var sliderValue: UILabel!
     @IBOutlet weak var sliderLabel: UILabel!
+    @IBOutlet weak var pedalName: UILabel!
     
     // update text field with current value
     @IBAction func sliderTime_changed(_ sender: UISlider)
@@ -25,7 +28,9 @@ class PedalViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // update title
+        pedalName.text = pedalTitle
     }
 
     override func didReceiveMemoryWarning()
