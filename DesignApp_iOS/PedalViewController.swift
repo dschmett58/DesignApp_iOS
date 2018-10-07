@@ -10,8 +10,6 @@ import UIKit
 
 class PedalViewController: UIViewController
 {
-    var pedalTitle = "(select a pedal)"
-    
     // label for slider value
     @IBOutlet weak var sliderValue: UILabel!
     @IBOutlet weak var sliderLabel: UILabel!
@@ -24,18 +22,11 @@ class PedalViewController: UIViewController
         sliderValue.text = String(format: "%.0f", val)
     }
     
-    // MARK: special stuff
-    override func viewDidLoad()
+    override func viewDidLoad() // NOT CALLED BY TAB SWITCH!
     {
         super.viewDidLoad()
 
         // update title
-        pedalName.text = pedalTitle
-    }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        pedalName.text = currentPedal
     }
 }

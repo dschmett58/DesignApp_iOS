@@ -8,10 +8,11 @@
 
 import UIKit
 
+// GLOBAL
+var currentPedal = "none so far"
+
 @IBDesignable class PedalboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-    var pedalName = "none"
-    
     // PEDAL NAMES
     let pedalNames: [[String]] =
     [
@@ -82,22 +83,15 @@ import UIKit
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         // set pedal name
-        pedalName = pedalNames[indexPath.section][indexPath.row]
-        print(pedalName)
+        currentPedal = pedalNames[indexPath.section][indexPath.row]
         
         // change view (tab over)
         self.tabBarController?.selectedIndex = 1
     }
     
-    // MARK: special stuff
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
     }
 }
 
