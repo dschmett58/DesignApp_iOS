@@ -1,2 +1,2 @@
 # DesignApp_iOS
-XCode project files for iOS application, written in Swift 
+Xcode project files for iOS application, written in Swift 
