@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/Dan/Documents/VILLANOVA/Fall2018/Design/DesignApp_iOS/DesignApp_iOS.xcodeproj">
+      location = "group:../../Moscapsule/Moscapsule.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
