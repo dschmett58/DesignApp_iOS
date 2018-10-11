@@ -131,6 +131,9 @@
                                 <rect key="frame" x="16" y="570" width="343" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="LOAD"/>
+                                <connections>
+                                    <action selector="loadButtonOnClick:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ffe-J6-Tv2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(selected pedal)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXB-o3-PiV" userLabel="Title">
                                 <rect key="frame" x="77" y="29.5" width="221" height="38.5"/>
@@ -154,6 +157,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Pedal" image="Pedal" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="loadButton" destination="WI9-z6-2fD" id="WZ9-YE-t9D"/>
                         <outlet property="pedalName" destination="tXB-o3-PiV" id="3Sf-8f-4e5"/>
                         <outlet property="sliderLabel" destination="6n5-5R-MdW" id="UaO-pe-SFB"/>
                         <outlet property="sliderValue" destination="VD0-3l-EK0" id="0ju-Ho-Fsw"/>

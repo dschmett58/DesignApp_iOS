@@ -9,7 +9,7 @@
 import UIKit
 
 // GLOBAL
-var currentPedal = "none so far"
+var currentPedal = "(select a pedal)"
 
 @IBDesignable class PedalboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
