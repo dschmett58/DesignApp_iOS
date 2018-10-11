@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3751AB67216FA3BA00A27AD5 /* Moscapsule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3751AB64216FA3A800A27AD5 /* Moscapsule.framework */; };
 		37B083112162FD4400570EE1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B083102162FD4400570EE1 /* SettingsViewController.swift */; };
 		37C8A183213F0F2C004AE182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8A182213F0F2C004AE182 /* AppDelegate.swift */; };
 		37C8A185213F0F2C004AE182 /* PedalboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8A184213F0F2C004AE182 /* PedalboardViewController.swift */; };
@@ -19,6 +20,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3751AB63216FA3A800A27AD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3751AB5E216FA3A800A27AD5 /* Moscapsule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 09CF6B131A21F78700A97383;
+			remoteInfo = Moscapsule;
+		};
+		3751AB65216FA3A800A27AD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3751AB5E216FA3A800A27AD5 /* Moscapsule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 09CF6B1E1A21F78700A97383;
+			remoteInfo = MoscapsuleTests;
+		};
+		3751AB68216FA3D100A27AD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3751AB5E216FA3A800A27AD5 /* Moscapsule.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 09CF6B121A21F78700A97383;
+			remoteInfo = Moscapsule;
+		};
 		37C8A196213F0F2E004AE182 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 37C8A177213F0F2C004AE182 /* Project object */;
@@ -36,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3751AB5C216FA39600A27AD5 /* Moscapsule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Moscapsule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3751AB5E216FA3A800A27AD5 /* Moscapsule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Moscapsule.xcodeproj; path = ../Moscapsule/Moscapsule.xcodeproj; sourceTree = "<group>"; };
 		37B083102162FD4400570EE1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37C8A17F213F0F2C004AE182 /* DesignApp_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignApp_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C8A182213F0F2C004AE182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3751AB67216FA3BA00A27AD5 /* Moscapsule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +103,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3751AB5B216FA39600A27AD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3751AB5C216FA39600A27AD5 /* Moscapsule.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3751AB5F216FA3A800A27AD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3751AB64216FA3A800A27AD5 /* Moscapsule.framework */,
+				3751AB66216FA3A800A27AD5 /* MoscapsuleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		37C8A176213F0F2C004AE182 = {
 			isa = PBXGroup;
 			children = (
+				3751AB5E216FA3A800A27AD5 /* Moscapsule.xcodeproj */,
 				37C8A181213F0F2C004AE182 /* DesignApp_iOS */,
 				37C8A198213F0F2E004AE182 /* DesignApp_iOSTests */,
 				37C8A1A3213F0F2E004AE182 /* DesignApp_iOSUITests */,
 				37C8A180213F0F2C004AE182 /* Products */,
+				3751AB5B216FA39600A27AD5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +189,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3751AB69216FA3D100A27AD5 /* PBXTargetDependency */,
 			);
 			name = DesignApp_iOS;
 			productName = first_try;
@@ -224,6 +269,12 @@
 			mainGroup = 37C8A176213F0F2C004AE182;
 			productRefGroup = 37C8A180213F0F2C004AE182 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3751AB5F216FA3A800A27AD5 /* Products */;
+					ProjectRef = 3751AB5E216FA3A800A27AD5 /* Moscapsule.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				37C8A17E213F0F2C004AE182 /* DesignApp_iOS */,
@@ -232,6 +283,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3751AB64216FA3A800A27AD5 /* Moscapsule.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Moscapsule.framework;
+			remoteRef = 3751AB63216FA3A800A27AD5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3751AB66216FA3A800A27AD5 /* MoscapsuleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MoscapsuleTests.xctest;
+			remoteRef = 3751AB65216FA3A800A27AD5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		37C8A17D213F0F2C004AE182 /* Resources */ = {
@@ -291,6 +359,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3751AB69216FA3D100A27AD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Moscapsule;
+			targetProxy = 3751AB68216FA3D100A27AD5 /* PBXContainerItemProxy */;
+		};
 		37C8A197213F0F2E004AE182 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 37C8A17E213F0F2C004AE182 /* DesignApp_iOS */;
