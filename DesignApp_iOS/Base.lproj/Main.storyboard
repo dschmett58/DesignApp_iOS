@@ -17,14 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedalboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAJ-lx-b60" userLabel="Title">
-                                <rect key="frame" x="109.5" y="73" width="156" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gK9-n3-p2v" userLabel="Pedalboard Table">
-                                <rect key="frame" x="0.0" y="128" width="375" height="539"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="OgO-8W-WKv"/>
@@ -34,16 +28,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bAJ-lx-b60" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="1U6-Xb-Rbb"/>
-                            <constraint firstItem="gK9-n3-p2v" firstAttribute="top" secondItem="bAJ-lx-b60" secondAttribute="bottom" constant="16" id="4OZ-jS-oTc"/>
                             <constraint firstItem="gK9-n3-p2v" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="OK3-CN-Pet"/>
                             <constraint firstItem="gK9-n3-p2v" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="YxN-Xg-izh"/>
-                            <constraint firstItem="gK9-n3-p2v" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="64" id="jY2-sN-3zz"/>
+                            <constraint firstItem="gK9-n3-p2v" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="jY2-sN-3zz"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="gK9-n3-p2v" secondAttribute="trailing" id="nOs-So-4xT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <navigationItem key="navigationItem" id="G20-Ko-6Lb"/>
+                    <navigationItem key="navigationItem" title="Pedalboard" id="G20-Ko-6Lb"/>
                     <connections>
                         <segue destination="gid-pP-31L" kind="show" identifier="Distortion" id="eKZ-MM-eVm"/>
                         <segue destination="nXG-7G-uWt" kind="show" identifier="Overdrive" id="nxX-lC-Grx"/>
