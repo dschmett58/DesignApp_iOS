@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3751AB67216FA3BA00A27AD5 /* Moscapsule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3751AB64216FA3A800A27AD5 /* Moscapsule.framework */; };
-		37B083112162FD4400570EE1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B083102162FD4400570EE1 /* SettingsViewController.swift */; };
 		37C8A183213F0F2C004AE182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8A182213F0F2C004AE182 /* AppDelegate.swift */; };
 		37C8A185213F0F2C004AE182 /* PedalboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8A184213F0F2C004AE182 /* PedalboardViewController.swift */; };
 		37C8A187213F0F2C004AE182 /* PedalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8A186213F0F2C004AE182 /* PedalViewController.swift */; };
@@ -60,7 +59,6 @@
 /* Begin PBXFileReference section */
 		3751AB5C216FA39600A27AD5 /* Moscapsule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Moscapsule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3751AB5E216FA3A800A27AD5 /* Moscapsule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Moscapsule.xcodeproj; path = ../Moscapsule/Moscapsule.xcodeproj; sourceTree = "<group>"; };
-		37B083102162FD4400570EE1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		37C8A17F213F0F2C004AE182 /* DesignApp_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignApp_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C8A182213F0F2C004AE182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37C8A184213F0F2C004AE182 /* PedalboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalboardViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 				37C8A188213F0F2C004AE182 /* Main.storyboard */,
 				37C8A184213F0F2C004AE182 /* PedalboardViewController.swift */,
 				37C8A186213F0F2C004AE182 /* PedalViewController.swift */,
-				37B083102162FD4400570EE1 /* SettingsViewController.swift */,
 				37C8A18B213F0F2E004AE182 /* Assets.xcassets */,
 				37C8A18D213F0F2E004AE182 /* LaunchScreen.storyboard */,
 				37C8A190213F0F2E004AE182 /* Info.plist */,
@@ -336,7 +333,6 @@
 				37C8A187213F0F2C004AE182 /* PedalViewController.swift in Sources */,
 				37C8A183213F0F2C004AE182 /* AppDelegate.swift in Sources */,
 				37C8A185213F0F2C004AE182 /* PedalboardViewController.swift in Sources */,
-				37B083112162FD4400570EE1 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,18 +15,18 @@ var currentPedal = "(select a pedal)"
 {
     // PEDAL NAMES
     let pedalNames: [[String]] =
-    [
-        ["Distortion", "Overdrive", "Fuzz"],
-        ["Delay", "Tremolo", "Echo"],
-        ["Chorus", "Octave"]
+        [
+            ["Distortion", "Overdrive", "Fuzz"],
+            ["Delay", "Tremolo", "Echo"],
+            ["Chorus", "Octave"]
     ]
     
     // PEDAL ICONS
     let pedalIcons: [[UIImage]] =
-    [
-        [#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion")],
-        [#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion")],
-        [#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion")]
+        [
+            [#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion")],
+            [#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion")],
+            [#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion")]
     ]
     
     // SECTION num
@@ -63,21 +63,22 @@ var currentPedal = "(select a pedal)"
         
         // set section titles
         switch section {
-            case 0:
-                section_title = "Distortions"
-                break
-            case 1:
-                section_title = "Modulations"
-                break
-            case 2:
-                section_title = "Weird Shit"
-                //break;
-            default:
-                break
+        case 0:
+            section_title = "Distortions"
+            break
+        case 1:
+            section_title = "Modulations"
+            break
+        case 2:
+            section_title = "Weird Shit"
+        //break;
+        default:
+            break
         }
         
         return section_title
     }
+    
     
     // OnClick functionality
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
@@ -85,8 +86,8 @@ var currentPedal = "(select a pedal)"
         // set pedal name
         currentPedal = pedalNames[indexPath.section][indexPath.row]
         
-        // change view (tab over)
-        self.tabBarController?.selectedIndex = 1
+        // segue to new view controller
+        performSegue(withIdentifier: currentPedal, sender: self)
     }
     
     override func viewDidLoad()

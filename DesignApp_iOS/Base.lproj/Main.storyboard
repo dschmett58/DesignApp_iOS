@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0PJ-ce-M1L">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,16 +18,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pedalboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAJ-lx-b60" userLabel="Title">
-                                <rect key="frame" x="109.5" y="29" width="156" height="39"/>
+                                <rect key="frame" x="109.5" y="73" width="156" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gK9-n3-p2v">
-                                <rect key="frame" x="0.0" y="84" width="375" height="534"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gK9-n3-p2v" userLabel="Pedalboard Table">
+                                <rect key="frame" x="0.0" y="128" width="375" height="539"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="NMx-qj-QY1"/>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="OgO-8W-WKv"/>
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="Fkw-4o-WXh"/>
                                 </connections>
                             </tableView>
@@ -44,147 +43,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pedalboard" image="Pedalboard" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="G20-Ko-6Lb"/>
+                    <connections>
+                        <segue destination="gid-pP-31L" kind="show" identifier="Distortion" id="eKZ-MM-eVm"/>
+                        <segue destination="nXG-7G-uWt" kind="show" identifier="Overdrive" id="nxX-lC-Grx"/>
+                        <segue destination="YlP-14-vdP" kind="show" identifier="Fuzz" id="ApB-XJ-Nl7"/>
+                        <segue destination="d2n-rw-eXf" kind="show" identifier="Delay" id="WwT-gN-J9a"/>
+                        <segue destination="4G0-ru-Gze" kind="show" identifier="Tremolo" id="kvr-Cm-2nc"/>
+                        <segue destination="KQf-G2-yWR" kind="show" identifier="Echo" id="ReI-qu-rJS"/>
+                        <segue destination="K1Q-D7-o4w" kind="show" identifier="Chorus" id="a56-wi-yDe"/>
+                        <segue destination="QvE-3o-VxQ" kind="show" identifier="Octave" id="JKs-rN-0gi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5063" y="-1326"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="dCo-np-CkM">
-            <objects>
-                <viewController title="Settings" id="CH4-Ac-nXk" customClass="SettingsViewController" customModule="DesignApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="di4-Ra-8nE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoH-ER-Sbw" userLabel="Title">
-                                <rect key="frame" x="130.5" y="29" width="114" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RdA-Mv-LgA">
-                                <rect key="frame" x="0.0" y="84" width="375" height="534"/>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="JoH-ER-Sbw" firstAttribute="centerX" secondItem="sg6-sg-DRC" secondAttribute="centerX" id="FrY-gw-nSN"/>
-                            <constraint firstItem="RdA-Mv-LgA" firstAttribute="leading" secondItem="sg6-sg-DRC" secondAttribute="leading" id="G6G-pN-vR5"/>
-                            <constraint firstItem="RdA-Mv-LgA" firstAttribute="top" secondItem="sg6-sg-DRC" secondAttribute="top" constant="64" id="KhJ-uC-MnU"/>
-                            <constraint firstItem="RdA-Mv-LgA" firstAttribute="trailing" secondItem="sg6-sg-DRC" secondAttribute="trailing" id="V8y-b8-LOK"/>
-                            <constraint firstItem="JoH-ER-Sbw" firstAttribute="bottom" secondItem="RdA-Mv-LgA" secondAttribute="top" constant="-16" id="d3d-nb-bKe"/>
-                            <constraint firstItem="RdA-Mv-LgA" firstAttribute="bottom" secondItem="sg6-sg-DRC" secondAttribute="bottom" id="rYr-ee-qji"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="sg6-sg-DRC"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="0Co-dw-q3v"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GCh-7o-3vH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3751" y="-1326"/>
-        </scene>
-        <!--Pedal-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController title="Pedal" id="8rJ-Kc-sve" customClass="PedalViewController" customModule="DesignApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kgV-ar-nS8">
-                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="q25-k0-ggL">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(label)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6n5-5R-MdW">
-                                                <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="64" id="YOS-Uc-lc4"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="UY3-bS-e0h">
-                                                <rect key="frame" x="78" y="0.0" width="219" height="31"/>
-                                                <connections>
-                                                    <action selector="sliderTime_changed:" destination="8rJ-Kc-sve" eventType="valueChanged" id="tgf-PO-vjs"/>
-                                                </connections>
-                                            </slider>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VD0-3l-EK0">
-                                                <rect key="frame" x="311" y="0.0" width="64" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="64" id="cgJ-tU-VWq"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WI9-z6-2fD" userLabel="Load Button">
-                                <rect key="frame" x="16" y="570" width="343" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="LOAD"/>
-                                <connections>
-                                    <action selector="loadButtonOnClick:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ffe-J6-Tv2"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(selected pedal)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXB-o3-PiV" userLabel="Title">
-                                <rect key="frame" x="77" y="29.5" width="221" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="kgV-ar-nS8" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="BBW-3x-PpD"/>
-                            <constraint firstItem="tXB-o3-PiV" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="Pyg-nf-akf"/>
-                            <constraint firstItem="WI9-z6-2fD" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" constant="-16" id="Vhu-49-FGy"/>
-                            <constraint firstItem="kgV-ar-nS8" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="YeR-iS-50c"/>
-                            <constraint firstItem="WI9-z6-2fD" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" constant="-16" id="bQq-if-taJ"/>
-                            <constraint firstItem="WI9-z6-2fD" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="r02-qx-Z7O"/>
-                            <constraint firstItem="kgV-ar-nS8" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="64" id="rNb-jj-Gl1"/>
-                            <constraint firstItem="kgV-ar-nS8" firstAttribute="top" secondItem="tXB-o3-PiV" secondAttribute="bottom" constant="16" id="yKt-BC-mM2"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Pedal" image="Pedal" id="cPa-gy-q4n"/>
-                    <connections>
-                        <outlet property="loadButton" destination="WI9-z6-2fD" id="WZ9-YE-t9D"/>
-                        <outlet property="pedalName" destination="tXB-o3-PiV" id="3Sf-8f-4e5"/>
-                        <outlet property="sliderLabel" destination="6n5-5R-MdW" id="UaO-pe-SFB"/>
-                        <outlet property="sliderValue" destination="VD0-3l-EK0" id="0ju-Ho-Fsw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4412" y="-1325"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="CH4-Ac-nXk" kind="relationship" relationship="viewControllers" id="eR1-sY-TLN"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4412" y="-2096"/>
+            <point key="canvasLocation" x="-1180" y="-3548"/>
         </scene>
         <!--Pedal_Distortion-->
         <scene sceneID="TJE-bQ-Hsw">
@@ -195,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pXL-ah-04o" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="StB-Gh-CLb" userLabel="First Setting">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -233,34 +106,28 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distortion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6d-Dx-jAi" userLabel="Title">
-                                <rect key="frame" x="121" y="29.5" width="133" height="38.5"/>
+                                <rect key="frame" x="121" y="73.5" width="133" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKk-EZ-jo2">
-                                <rect key="frame" x="16" y="34" width="92" height="30"/>
-                                <state key="normal" title="&lt; Pedalboard"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pXL-ah-04o" firstAttribute="top" secondItem="n6d-Dx-jAi" secondAttribute="bottom" constant="16" id="3Gd-XD-Wuw"/>
                             <constraint firstItem="n6d-Dx-jAi" firstAttribute="centerX" secondItem="WYl-Zr-U8J" secondAttribute="centerX" id="AI5-lZ-wSm"/>
                             <constraint firstItem="pXL-ah-04o" firstAttribute="leading" secondItem="WYl-Zr-U8J" secondAttribute="leading" id="AYy-om-Tjj"/>
-                            <constraint firstItem="wKk-EZ-jo2" firstAttribute="leading" secondItem="WYl-Zr-U8J" secondAttribute="leading" constant="16" id="SDu-Qu-RkB"/>
                             <constraint firstItem="OYT-GZ-r6M" firstAttribute="centerX" secondItem="WYl-Zr-U8J" secondAttribute="centerX" id="fo5-bE-R0u"/>
                             <constraint firstItem="pXL-ah-04o" firstAttribute="top" secondItem="WYl-Zr-U8J" secondAttribute="top" constant="64" id="nTT-Ra-arC"/>
                             <constraint firstItem="WYl-Zr-U8J" firstAttribute="bottom" secondItem="OYT-GZ-r6M" secondAttribute="bottom" constant="64" id="qmc-ct-Gey"/>
                             <constraint firstItem="WYl-Zr-U8J" firstAttribute="trailing" secondItem="pXL-ah-04o" secondAttribute="trailing" id="v1r-Fx-p0E"/>
-                            <constraint firstItem="wKk-EZ-jo2" firstAttribute="centerY" secondItem="n6d-Dx-jAi" secondAttribute="centerY" id="xuB-UY-lzx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WYl-Zr-U8J"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KWM-xY-XQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2292" y="-2478"/>
+            <point key="canvasLocation" x="-4220" y="-2410"/>
         </scene>
         <!--Pedal_Overdrive-->
         <scene sceneID="Fbt-2r-Ui4">
@@ -271,7 +138,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="shq-qM-yJP" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NJw-xP-ig7" userLabel="First Setting">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -309,15 +176,11 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overdrive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qje-jy-2xz" userLabel="Title">
-                                <rect key="frame" x="121" y="29.5" width="133" height="38.5"/>
+                                <rect key="frame" x="121" y="73.5" width="133" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpe-b7-x1E">
-                                <rect key="frame" x="16" y="34" width="92" height="30"/>
-                                <state key="normal" title="&lt; Pedalboard"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -325,18 +188,16 @@
                             <constraint firstItem="shq-qM-yJP" firstAttribute="top" secondItem="Qje-jy-2xz" secondAttribute="bottom" constant="16" id="FRQ-Oo-xFD"/>
                             <constraint firstItem="0Z7-l2-70r" firstAttribute="centerX" secondItem="Tys-Yl-Wau" secondAttribute="centerX" id="OVy-d2-YwE"/>
                             <constraint firstItem="shq-qM-yJP" firstAttribute="leading" secondItem="Tys-Yl-Wau" secondAttribute="leading" id="Vch-hQ-XgX"/>
-                            <constraint firstItem="kpe-b7-x1E" firstAttribute="centerY" secondItem="Qje-jy-2xz" secondAttribute="centerY" id="dHY-Hc-p8A"/>
                             <constraint firstItem="shq-qM-yJP" firstAttribute="top" secondItem="Tys-Yl-Wau" secondAttribute="top" constant="64" id="eJg-Ff-SZe"/>
                             <constraint firstItem="Tys-Yl-Wau" firstAttribute="bottom" secondItem="0Z7-l2-70r" secondAttribute="bottom" constant="64" id="yKE-AR-6rS"/>
                             <constraint firstItem="Qje-jy-2xz" firstAttribute="centerX" secondItem="Tys-Yl-Wau" secondAttribute="centerX" id="zG5-aA-PVr"/>
-                            <constraint firstItem="kpe-b7-x1E" firstAttribute="leading" secondItem="Tys-Yl-Wau" secondAttribute="leading" constant="16" id="zto-qM-72s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tys-Yl-Wau"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70o-FP-66k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1641" y="-2478"/>
+            <point key="canvasLocation" x="-3570" y="-2410"/>
         </scene>
         <!--Pedal_Fuzz-->
         <scene sceneID="zrJ-OL-343">
@@ -347,7 +208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dOu-lf-NXd" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="84" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="76"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pbg-hE-4hX" userLabel="Cutoff">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -411,15 +272,11 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fuzz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rs-sx-WVj" userLabel="Title">
-                                <rect key="frame" x="155" y="29.5" width="65.5" height="38.5"/>
+                                <rect key="frame" x="155" y="73.5" width="65.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmg-5v-N71">
-                                <rect key="frame" x="16" y="34" width="92" height="30"/>
-                                <state key="normal" title="&lt; Pedalboard"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -428,9 +285,7 @@
                             <constraint firstItem="o96-Os-7O0" firstAttribute="trailing" secondItem="dOu-lf-NXd" secondAttribute="trailing" id="KaA-jO-Iat"/>
                             <constraint firstItem="o96-Os-7O0" firstAttribute="bottom" secondItem="9I5-T5-Oqo" secondAttribute="bottom" constant="64" id="QcL-26-luN"/>
                             <constraint firstItem="0Rs-sx-WVj" firstAttribute="centerX" secondItem="o96-Os-7O0" secondAttribute="centerX" id="Qu8-oG-9k6"/>
-                            <constraint firstItem="kmg-5v-N71" firstAttribute="leading" secondItem="o96-Os-7O0" secondAttribute="leading" constant="16" id="RFm-Q9-KHr"/>
                             <constraint firstItem="dOu-lf-NXd" firstAttribute="top" secondItem="0Rs-sx-WVj" secondAttribute="bottom" constant="16" id="XNd-nH-JmW"/>
-                            <constraint firstItem="kmg-5v-N71" firstAttribute="centerY" secondItem="0Rs-sx-WVj" secondAttribute="centerY" id="eF1-vj-h8n"/>
                             <constraint firstItem="dOu-lf-NXd" firstAttribute="top" secondItem="o96-Os-7O0" secondAttribute="top" constant="64" id="mfh-DU-IhH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o96-Os-7O0"/>
@@ -438,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h28-3r-CHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-980" y="-2478"/>
+            <point key="canvasLocation" x="-2908" y="-2410"/>
         </scene>
         <!--Pedal_Delay-->
         <scene sceneID="qnw-Kt-UQP">
@@ -449,7 +304,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tjm-M1-ant" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="84" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="76"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sig-Vg-Uyc" userLabel="Time">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -513,23 +368,17 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGu-gC-wsP" userLabel="Title">
-                                <rect key="frame" x="148.5" y="29.5" width="78.5" height="38.5"/>
+                                <rect key="frame" x="148.5" y="73.5" width="78.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6D1-ny-1RM">
-                                <rect key="frame" x="16" y="34" width="92" height="30"/>
-                                <state key="normal" title="&lt; Pedalboard"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VU7-Y8-aQ4" firstAttribute="bottom" secondItem="lbA-Pa-pcL" secondAttribute="bottom" constant="64" id="4Uc-oO-R2E"/>
                             <constraint firstItem="tjm-M1-ant" firstAttribute="leading" secondItem="VU7-Y8-aQ4" secondAttribute="leading" id="6uV-Po-dUp"/>
                             <constraint firstItem="lbA-Pa-pcL" firstAttribute="centerX" secondItem="VU7-Y8-aQ4" secondAttribute="centerX" id="EN4-eA-gVM"/>
-                            <constraint firstItem="6D1-ny-1RM" firstAttribute="leading" secondItem="VU7-Y8-aQ4" secondAttribute="leading" constant="16" id="REK-Dt-ik6"/>
-                            <constraint firstItem="6D1-ny-1RM" firstAttribute="centerY" secondItem="mGu-gC-wsP" secondAttribute="centerY" id="S5L-kF-XR4"/>
                             <constraint firstItem="tjm-M1-ant" firstAttribute="top" secondItem="mGu-gC-wsP" secondAttribute="bottom" constant="16" id="cdv-YT-ZEu"/>
                             <constraint firstItem="mGu-gC-wsP" firstAttribute="centerX" secondItem="VU7-Y8-aQ4" secondAttribute="centerX" id="ceX-92-iOQ"/>
                             <constraint firstItem="tjm-M1-ant" firstAttribute="top" secondItem="VU7-Y8-aQ4" secondAttribute="top" constant="64" id="oKT-6e-8hr"/>
@@ -540,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o2Q-mN-ifw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2292" y="-1710"/>
+            <point key="canvasLocation" x="-1830" y="-2411"/>
         </scene>
         <!--Pedal_Tremolo-->
         <scene sceneID="mH8-Ur-gxM">
@@ -551,7 +400,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NuB-dD-fYo" userLabel="Speed">
-                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lzC-oK-Bzs" userLabel="Cutoff">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -589,22 +438,16 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tremolo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taH-dt-yyx" userLabel="Title">
-                                <rect key="frame" x="133" y="29.5" width="109.5" height="38.5"/>
+                                <rect key="frame" x="133" y="73.5" width="109.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMw-gR-sng">
-                                <rect key="frame" x="16" y="34" width="92" height="30"/>
-                                <state key="normal" title="&lt; Pedalboard"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NuB-dD-fYo" firstAttribute="leading" secondItem="SXF-34-kT2" secondAttribute="leading" id="1l3-ut-PdN"/>
                             <constraint firstItem="Tbg-Xv-HLZ" firstAttribute="centerX" secondItem="SXF-34-kT2" secondAttribute="centerX" id="8BQ-YQ-kIq"/>
-                            <constraint firstItem="vMw-gR-sng" firstAttribute="leading" secondItem="SXF-34-kT2" secondAttribute="leading" constant="16" id="EME-CC-XaW"/>
-                            <constraint firstItem="vMw-gR-sng" firstAttribute="centerY" secondItem="taH-dt-yyx" secondAttribute="centerY" id="YVw-t5-Dkt"/>
                             <constraint firstItem="taH-dt-yyx" firstAttribute="centerX" secondItem="SXF-34-kT2" secondAttribute="centerX" id="YsX-zn-wKb"/>
                             <constraint firstItem="NuB-dD-fYo" firstAttribute="top" secondItem="taH-dt-yyx" secondAttribute="bottom" constant="16" id="aQT-BF-xjl"/>
                             <constraint firstItem="NuB-dD-fYo" firstAttribute="top" secondItem="SXF-34-kT2" secondAttribute="top" constant="64" id="qiA-vC-aGC"/>
@@ -616,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBF-Ho-XZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1642" y="-1709"/>
+            <point key="canvasLocation" x="-1180" y="-2410"/>
         </scene>
         <!--Pedal_Echo-->
         <scene sceneID="Ry9-KQ-y7K">
@@ -627,7 +470,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Fqh-0a-8Vb" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="84" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="76"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rxZ-eX-FQs" userLabel="Time">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -691,26 +534,20 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Echo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auh-Sy-JRE" userLabel="Title">
-                                <rect key="frame" x="153" y="29.5" width="69.5" height="38.5"/>
+                                <rect key="frame" x="153" y="73.5" width="69.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuR-Wj-1s4">
-                                <rect key="frame" x="16" y="34" width="92" height="30"/>
-                                <state key="normal" title="&lt; Pedalboard"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="EuR-Wj-1s4" firstAttribute="leading" secondItem="G7L-b6-0C2" secondAttribute="leading" constant="16" id="4oR-9v-wQv"/>
                             <constraint firstItem="Fqh-0a-8Vb" firstAttribute="top" secondItem="auh-Sy-JRE" secondAttribute="bottom" constant="16" id="6DO-3I-ENJ"/>
                             <constraint firstItem="auh-Sy-JRE" firstAttribute="centerX" secondItem="G7L-b6-0C2" secondAttribute="centerX" id="74X-Nh-ilC"/>
                             <constraint firstItem="Fqh-0a-8Vb" firstAttribute="leading" secondItem="G7L-b6-0C2" secondAttribute="leading" id="OUz-4k-bBH"/>
                             <constraint firstItem="G7L-b6-0C2" firstAttribute="bottom" secondItem="WMC-OS-LqC" secondAttribute="bottom" constant="64" id="QVw-ds-btc"/>
                             <constraint firstItem="WMC-OS-LqC" firstAttribute="centerX" secondItem="G7L-b6-0C2" secondAttribute="centerX" id="Zil-i1-1v1"/>
                             <constraint firstItem="Fqh-0a-8Vb" firstAttribute="top" secondItem="G7L-b6-0C2" secondAttribute="top" constant="64" id="aMu-M5-LiZ"/>
-                            <constraint firstItem="EuR-Wj-1s4" firstAttribute="centerY" secondItem="auh-Sy-JRE" secondAttribute="centerY" id="j5L-Cz-gyo"/>
                             <constraint firstItem="G7L-b6-0C2" firstAttribute="trailing" secondItem="Fqh-0a-8Vb" secondAttribute="trailing" id="q0i-1F-2hP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G7L-b6-0C2"/>
@@ -718,7 +555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5l-Cm-ZEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-980" y="-1710"/>
+            <point key="canvasLocation" x="-518" y="-2411"/>
         </scene>
         <!--Pedal_Chorus-->
         <scene sceneID="6ax-PO-nDA">
@@ -729,7 +566,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="OGH-8N-QWo" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NCm-mC-PKW" userLabel="First Setting">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -767,15 +604,11 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chorus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WN-aP-jGT" userLabel="Title">
-                                <rect key="frame" x="137.5" y="29.5" width="100.5" height="38.5"/>
+                                <rect key="frame" x="137.5" y="73.5" width="100.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vP-be-30n">
-                                <rect key="frame" x="16" y="34" width="92" height="30"/>
-                                <state key="normal" title="&lt; Pedalboard"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -784,8 +617,6 @@
                             <constraint firstItem="9WN-aP-jGT" firstAttribute="centerX" secondItem="Gg3-yb-1wh" secondAttribute="centerX" id="G93-qu-Xwt"/>
                             <constraint firstItem="OGH-8N-QWo" firstAttribute="top" secondItem="9WN-aP-jGT" secondAttribute="bottom" constant="16" id="Va5-wy-2gT"/>
                             <constraint firstItem="OGH-8N-QWo" firstAttribute="leading" secondItem="Gg3-yb-1wh" secondAttribute="leading" id="WWA-h6-jtv"/>
-                            <constraint firstItem="5vP-be-30n" firstAttribute="leading" secondItem="Gg3-yb-1wh" secondAttribute="leading" constant="16" id="XoT-I2-sYL"/>
-                            <constraint firstItem="5vP-be-30n" firstAttribute="centerY" secondItem="9WN-aP-jGT" secondAttribute="centerY" id="cCJ-mg-MI5"/>
                             <constraint firstItem="Dnj-4o-rWM" firstAttribute="centerX" secondItem="Gg3-yb-1wh" secondAttribute="centerX" id="fzD-Ar-Gmi"/>
                             <constraint firstItem="Gg3-yb-1wh" firstAttribute="bottom" secondItem="Dnj-4o-rWM" secondAttribute="bottom" constant="64" id="tuq-bC-96r"/>
                         </constraints>
@@ -794,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMe-X9-DII" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2292" y="-942"/>
+            <point key="canvasLocation" x="580" y="-2410"/>
         </scene>
         <!--Pedal_Octave-->
         <scene sceneID="QWu-FH-Ltl">
@@ -805,7 +636,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3uY-kh-dLC" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fAh-d4-d3S" userLabel="First Setting">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -843,15 +674,11 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Octave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYJ-HQ-GUY" userLabel="Title">
-                                <rect key="frame" x="138.5" y="29.5" width="98.5" height="38.5"/>
+                                <rect key="frame" x="138.5" y="73.5" width="98.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzn-ty-8KV">
-                                <rect key="frame" x="16" y="34" width="92" height="30"/>
-                                <state key="normal" title="&lt; Pedalboard"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -859,9 +686,7 @@
                             <constraint firstItem="3uY-kh-dLC" firstAttribute="top" secondItem="GYJ-HQ-GUY" secondAttribute="bottom" constant="16" id="6X2-fh-f8d"/>
                             <constraint firstItem="Ngd-mf-qd5" firstAttribute="bottom" secondItem="sMD-y1-PbI" secondAttribute="bottom" constant="64" id="L3J-De-bv7"/>
                             <constraint firstItem="GYJ-HQ-GUY" firstAttribute="centerX" secondItem="Ngd-mf-qd5" secondAttribute="centerX" id="QYp-hI-B9E"/>
-                            <constraint firstItem="Yzn-ty-8KV" firstAttribute="leading" secondItem="Ngd-mf-qd5" secondAttribute="leading" constant="16" id="SMf-WE-WTt"/>
                             <constraint firstItem="3uY-kh-dLC" firstAttribute="top" secondItem="Ngd-mf-qd5" secondAttribute="top" constant="64" id="Sdg-Xk-Whs"/>
-                            <constraint firstItem="Yzn-ty-8KV" firstAttribute="centerY" secondItem="GYJ-HQ-GUY" secondAttribute="centerY" id="daG-hJ-55z"/>
                             <constraint firstItem="3uY-kh-dLC" firstAttribute="leading" secondItem="Ngd-mf-qd5" secondAttribute="leading" id="f8D-P0-3eM"/>
                             <constraint firstItem="sMD-y1-PbI" firstAttribute="centerX" secondItem="Ngd-mf-qd5" secondAttribute="centerX" id="sRp-zX-LgK"/>
                         </constraints>
@@ -870,12 +695,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w52-Xi-1al" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1642" y="-942"/>
+            <point key="canvasLocation" x="1230" y="-2410"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DQv-th-Pq6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0PJ-ce-M1L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DbC-GG-ObZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="DNx-Hg-Cda"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tvw-AS-YJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2073" y="-3548"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Pedal" width="25" height="25"/>
-        <image name="Pedalboard" width="25" height="25"/>
-        <image name="Settings" width="25" height="25"/>
-    </resources>
 </document>
