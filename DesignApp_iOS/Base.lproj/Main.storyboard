@@ -37,14 +37,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pedalboard" id="G20-Ko-6Lb"/>
                     <connections>
-                        <segue destination="gid-pP-31L" kind="show" identifier="Distortion" id="eKZ-MM-eVm"/>
-                        <segue destination="nXG-7G-uWt" kind="show" identifier="Overdrive" id="nxX-lC-Grx"/>
-                        <segue destination="YlP-14-vdP" kind="show" identifier="Fuzz" id="ApB-XJ-Nl7"/>
-                        <segue destination="d2n-rw-eXf" kind="show" identifier="Delay" id="WwT-gN-J9a"/>
-                        <segue destination="4G0-ru-Gze" kind="show" identifier="Tremolo" id="kvr-Cm-2nc"/>
-                        <segue destination="KQf-G2-yWR" kind="show" identifier="Echo" id="ReI-qu-rJS"/>
-                        <segue destination="K1Q-D7-o4w" kind="show" identifier="Chorus" id="a56-wi-yDe"/>
-                        <segue destination="QvE-3o-VxQ" kind="show" identifier="Octave" id="JKs-rN-0gi"/>
+                        <segue destination="48e-J2-7pb" kind="show" identifier="pedalSelect" id="qCo-9G-Phh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -54,13 +47,14 @@
         <!--Pedal_Distortion-->
         <scene sceneID="TJE-bQ-Hsw">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWM-xY-XQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gid-pP-31L" userLabel="Pedal_Distortion" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L0K-KM-0OJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pXL-ah-04o" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="128" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="StB-Gh-CLb" userLabel="First Setting">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -98,7 +92,7 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distortion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6d-Dx-jAi" userLabel="Title">
-                                <rect key="frame" x="121" y="73.5" width="133" height="38.5"/>
+                                <rect key="frame" x="121" y="29.5" width="133" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -117,20 +111,20 @@
                         <viewLayoutGuide key="safeArea" id="WYl-Zr-U8J"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KWM-xY-XQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4220" y="-2410"/>
         </scene>
         <!--Pedal_Overdrive-->
         <scene sceneID="Fbt-2r-Ui4">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="70o-FP-66k" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="nXG-7G-uWt" userLabel="Pedal_Overdrive" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UEo-9Q-U7U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="shq-qM-yJP" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="128" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NJw-xP-ig7" userLabel="First Setting">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -168,7 +162,7 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overdrive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qje-jy-2xz" userLabel="Title">
-                                <rect key="frame" x="121" y="73.5" width="133" height="38.5"/>
+                                <rect key="frame" x="121" y="29.5" width="133" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -187,20 +181,20 @@
                         <viewLayoutGuide key="safeArea" id="Tys-Yl-Wau"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="70o-FP-66k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3570" y="-2410"/>
         </scene>
         <!--Pedal_Fuzz-->
         <scene sceneID="zrJ-OL-343">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h28-3r-CHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="YlP-14-vdP" userLabel="Pedal_Fuzz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6WR-op-3YW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dOu-lf-NXd" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="128" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="76"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pbg-hE-4hX" userLabel="Cutoff">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -264,7 +258,7 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fuzz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rs-sx-WVj" userLabel="Title">
-                                <rect key="frame" x="155" y="73.5" width="65.5" height="38.5"/>
+                                <rect key="frame" x="155" y="29.5" width="65.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -283,20 +277,20 @@
                         <viewLayoutGuide key="safeArea" id="o96-Os-7O0"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h28-3r-CHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2908" y="-2410"/>
         </scene>
         <!--Pedal_Delay-->
         <scene sceneID="qnw-Kt-UQP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o2Q-mN-ifw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="d2n-rw-eXf" userLabel="Pedal_Delay" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zfk-Cn-K5V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tjm-M1-ant" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="128" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="76"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sig-Vg-Uyc" userLabel="Time">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -360,7 +354,7 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGu-gC-wsP" userLabel="Title">
-                                <rect key="frame" x="148.5" y="73.5" width="78.5" height="38.5"/>
+                                <rect key="frame" x="148.5" y="29.5" width="78.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -379,20 +373,20 @@
                         <viewLayoutGuide key="safeArea" id="VU7-Y8-aQ4"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o2Q-mN-ifw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1830" y="-2411"/>
         </scene>
         <!--Pedal_Tremolo-->
         <scene sceneID="mH8-Ur-gxM">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uBF-Ho-XZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="4G0-ru-Gze" userLabel="Pedal_Tremolo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="47o-zi-Dho">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NuB-dD-fYo" userLabel="Speed">
-                                <rect key="frame" x="0.0" y="128" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lzC-oK-Bzs" userLabel="Cutoff">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -430,7 +424,7 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tremolo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taH-dt-yyx" userLabel="Title">
-                                <rect key="frame" x="133" y="73.5" width="109.5" height="38.5"/>
+                                <rect key="frame" x="133" y="29.5" width="109.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -449,20 +443,20 @@
                         <viewLayoutGuide key="safeArea" id="SXF-34-kT2"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uBF-Ho-XZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1180" y="-2410"/>
         </scene>
         <!--Pedal_Echo-->
         <scene sceneID="Ry9-KQ-y7K">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5l-Cm-ZEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="KQf-G2-yWR" userLabel="Pedal_Echo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yZw-Fp-ZQI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Fqh-0a-8Vb" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="128" width="375" height="76"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="76"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rxZ-eX-FQs" userLabel="Time">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -526,7 +520,7 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Echo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auh-Sy-JRE" userLabel="Title">
-                                <rect key="frame" x="153" y="73.5" width="69.5" height="38.5"/>
+                                <rect key="frame" x="153" y="29.5" width="69.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -545,20 +539,20 @@
                         <viewLayoutGuide key="safeArea" id="G7L-b6-0C2"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c5l-Cm-ZEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-518" y="-2411"/>
         </scene>
         <!--Pedal_Chorus-->
         <scene sceneID="6ax-PO-nDA">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMe-X9-DII" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="K1Q-D7-o4w" userLabel="Pedal_Chorus" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="njq-bR-esF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="OGH-8N-QWo" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="128" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NCm-mC-PKW" userLabel="First Setting">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -596,7 +590,7 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chorus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WN-aP-jGT" userLabel="Title">
-                                <rect key="frame" x="137.5" y="73.5" width="100.5" height="38.5"/>
+                                <rect key="frame" x="137.5" y="29.5" width="100.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -615,20 +609,20 @@
                         <viewLayoutGuide key="safeArea" id="Gg3-yb-1wh"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aMe-X9-DII" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="580" y="-2410"/>
         </scene>
         <!--Pedal_Octave-->
         <scene sceneID="QWu-FH-Ltl">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w52-Xi-1al" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="QvE-3o-VxQ" userLabel="Pedal_Octave" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aPd-k6-fZ8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3uY-kh-dLC" userLabel="Settings">
-                                <rect key="frame" x="0.0" y="128" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="30"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fAh-d4-d3S" userLabel="First Setting">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -666,7 +660,7 @@
                                 <state key="normal" title="- LOAD -"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Octave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYJ-HQ-GUY" userLabel="Title">
-                                <rect key="frame" x="138.5" y="73.5" width="98.5" height="38.5"/>
+                                <rect key="frame" x="138.5" y="29.5" width="98.5" height="38.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -685,7 +679,6 @@
                         <viewLayoutGuide key="safeArea" id="Ngd-mf-qd5"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w52-Xi-1al" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1230" y="-2410"/>
         </scene>
@@ -706,6 +699,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvw-AS-YJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2073" y="-3548"/>
+        </scene>
+        <!--Pedal-->
+        <scene sceneID="8lZ-iK-9v6">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUk-0u-NcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="48e-J2-7pb" userLabel="Pedal" customClass="PedalViewController" customModule="DesignApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XI3-g7-16P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4ME-D4-joe" userLabel="Settings">
+                                <rect key="frame" x="0.0" y="128" width="375" height="429"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMk-Ow-2jj" userLabel="Load Button">
+                                <rect key="frame" x="137.5" y="573" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="lQc-c8-i0t"/>
+                                </constraints>
+                                <state key="normal" title="- LOAD -"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mh7-hT-GmH" userLabel="Title">
+                                <rect key="frame" x="162" y="73.5" width="51" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4ME-D4-joe" firstAttribute="top" secondItem="Mh7-hT-GmH" secondAttribute="bottom" constant="16" id="20A-aY-31U"/>
+                            <constraint firstItem="JMk-Ow-2jj" firstAttribute="top" secondItem="4ME-D4-joe" secondAttribute="bottom" constant="16" id="GCT-rU-Y87"/>
+                            <constraint firstItem="4ME-D4-joe" firstAttribute="leading" secondItem="boK-oL-glb" secondAttribute="leading" id="I4x-Ms-Pvc"/>
+                            <constraint firstItem="Mh7-hT-GmH" firstAttribute="centerX" secondItem="boK-oL-glb" secondAttribute="centerX" id="iGu-fT-cCq"/>
+                            <constraint firstItem="JMk-Ow-2jj" firstAttribute="centerX" secondItem="boK-oL-glb" secondAttribute="centerX" id="ice-ym-MMV"/>
+                            <constraint firstItem="4ME-D4-joe" firstAttribute="top" secondItem="boK-oL-glb" secondAttribute="top" constant="64" id="rmw-xO-tuc"/>
+                            <constraint firstItem="boK-oL-glb" firstAttribute="bottom" secondItem="JMk-Ow-2jj" secondAttribute="bottom" constant="64" id="uST-xo-0gO"/>
+                            <constraint firstItem="boK-oL-glb" firstAttribute="trailing" secondItem="4ME-D4-joe" secondAttribute="trailing" id="zrc-vH-1yR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="boK-oL-glb"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadButton" destination="JMk-Ow-2jj" id="cDC-sp-cEF"/>
+                        <outlet property="pedalName" destination="Mh7-hT-GmH" id="Pws-mu-rup"/>
+                        <outlet property="settingsStack" destination="4ME-D4-joe" id="UVY-vM-Dsi"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-292" y="-3548"/>
         </scene>
     </scenes>
 </document>

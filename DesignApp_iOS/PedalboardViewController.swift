@@ -87,7 +87,7 @@ var currentPedal = "(select a pedal)"
         currentPedal = pedalNames[indexPath.section][indexPath.row]
         
         // segue to new view controller
-        performSegue(withIdentifier: currentPedal, sender: self)
+        performSegue(withIdentifier: "pedalSelect", sender: self)
     }
     
     override func viewDidLoad()
