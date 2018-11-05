@@ -52,9 +52,50 @@ class PedalViewController: UIViewController
         // update title
         pedalName.text = currentPedal
         
+        // create & add settings
+        switch(currentPedal)
+        {
+            case "Distortion":
+                addSetting(name: "setting1")
+                break;
+            case "Overdrive":
+                addSetting(name: "setting1")
+                break;
+            case "Fuzz":
+                addSetting(name: "Cutoff")
+                addSetting(name: "Ceiling")
+                break;
+
+            case "Delay":
+                addSetting(name: "Time")
+                addSetting(name: "Sustain")
+                break;
+            case "Tremolo":
+                addSetting(name: "Speed")
+                break;
+            case "Echo":
+                addSetting(name: "Time")
+                addSetting(name: "Sustain")
+                break;
+
+            case "Chorus":
+                addSetting(name: "setting1")
+                break;
+            case "Octave":
+                addSetting(name: "setting1")
+                break;
+
+            default:
+                addSetting(name: "nothing")
+                break;
+        }
+    }
+    
+    func addSetting(name: String)
+    {
         // create settingLabel
         let settingLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 64, height: 32))
-        settingLabel.text = "setting1"
+        settingLabel.text = name
         settingLabel.textAlignment = .right
         settingLabel.addConstraint(NSLayoutConstraint.init(item: settingLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 64))
         
@@ -71,18 +112,18 @@ class PedalViewController: UIViewController
         valueLabel.addConstraint(NSLayoutConstraint.init(item: valueLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 64))
         
         // create stack for first setting
-        let setting1 = UIStackView(arrangedSubviews: [settingLabel,valueSlider,valueLabel])
-        setting1.axis = .horizontal
-        setting1.distribution = .fill
-        setting1.alignment = .fill
-        setting1.spacing = 16
-        setting1.contentMode = .scaleToFill
-        setting1.translatesAutoresizingMaskIntoConstraints = false
-        setting1.addConstraint(NSLayoutConstraint.init(item: setting1, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 32))
+        let setting = UIStackView(arrangedSubviews: [settingLabel,valueSlider,valueLabel])
+        setting.axis = .horizontal
+        setting.distribution = .fill
+        setting.alignment = .fill
+        setting.spacing = 16
+        setting.contentMode = .scaleToFill
+        setting.translatesAutoresizingMaskIntoConstraints = false
+        setting.addConstraint(NSLayoutConstraint.init(item: setting, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 32))
         
         // add first setting to settingsStack
-        settingsStack.addSubview(setting1)
+        settingsStack.addSubview(setting)
         
-        // update settings values? - TODO
+        // update setting value? - TODO
     }
 }
