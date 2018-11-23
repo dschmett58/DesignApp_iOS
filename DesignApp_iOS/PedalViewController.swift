@@ -20,12 +20,17 @@ class PedalViewController: UIViewController
     @IBOutlet weak var loadButton: UIButton!
     @IBOutlet weak var settingsStack: UIStackView!
     
-    // update text field with current value
-//    @IBAction func sliderTime_changed(_ sender: UISlider)
-//    {
-//        let val = floorf(sender.value)
-//        sliderValue.text = String(format: "%.0f", val)
-//    }
+    // list of sliders and slider value labels
+    var sliders = [UISlider]()
+    var slabels = [UILabel]()
+    
+    // update value label with slider value
+    @objc func sliderValueChanged(sender: UISlider)
+    {
+        let val = floorf(sender.value)                          // round slider value
+        let num = sliders.firstIndex(of: sender)                // find slider index in list
+        slabels[num ?? 0].text = String(format: "%.0f", val)    // set accompanying label with rounded value
+    }
 
     // LOAD button functionality
 //    @IBAction func loadButtonOnClick(_ sender: Any)
@@ -104,12 +109,15 @@ class PedalViewController: UIViewController
         valueSlider.minimumValue = 0
         valueSlider.maximumValue = 100
         valueSlider.value = 50
+        valueSlider.addTarget(self, action: #selector(sliderValueChanged(sender:)), for: .valueChanged)
+        sliders.append(valueSlider)
         
         // create valueLabel
         let valueLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 64, height: 32))
         valueLabel.text = "50"
         valueLabel.textAlignment = .left
         valueLabel.addConstraint(NSLayoutConstraint.init(item: valueLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 64))
+        slabels.append(valueLabel)
         
         // create stack for first setting
         let setting = UIStackView(arrangedSubviews: [settingLabel,valueSlider,valueLabel])
