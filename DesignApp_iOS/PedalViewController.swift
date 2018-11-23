@@ -117,12 +117,12 @@ class PedalViewController: UIViewController
         setting.distribution = .fill
         setting.alignment = .fill
         setting.spacing = 16
-        setting.contentMode = .scaleToFill
+        //setting.contentMode = .scaleToFill
         setting.translatesAutoresizingMaskIntoConstraints = false
-        setting.addConstraint(NSLayoutConstraint.init(item: setting, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 32))
+        //setting.addConstraint(NSLayoutConstraint.init(item: setting, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 32))
         
         // add first setting to settingsStack
-        settingsStack.addSubview(setting)
+        settingsStack.addArrangedSubview(setting)
         
         // update setting value? - TODO
     }

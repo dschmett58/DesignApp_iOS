@@ -65,13 +65,12 @@
         <!--Pedal-->
         <scene sceneID="8lZ-iK-9v6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LUk-0u-NcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="48e-J2-7pb" userLabel="Pedal" customClass="PedalViewController" customModule="DesignApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XI3-g7-16P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4ME-D4-joe" userLabel="Settings">
+                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4ME-D4-joe" userLabel="Settings">
                                 <rect key="frame" x="0.0" y="128" width="375" height="429"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMk-Ow-2jj" userLabel="Load Button">
@@ -92,7 +91,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4ME-D4-joe" firstAttribute="top" secondItem="Mh7-hT-GmH" secondAttribute="bottom" constant="16" id="20A-aY-31U"/>
-                            <constraint firstItem="JMk-Ow-2jj" firstAttribute="top" secondItem="4ME-D4-joe" secondAttribute="bottom" constant="16" id="GCT-rU-Y87"/>
                             <constraint firstItem="4ME-D4-joe" firstAttribute="leading" secondItem="boK-oL-glb" secondAttribute="leading" id="I4x-Ms-Pvc"/>
                             <constraint firstItem="Mh7-hT-GmH" firstAttribute="centerX" secondItem="boK-oL-glb" secondAttribute="centerX" id="iGu-fT-cCq"/>
                             <constraint firstItem="JMk-Ow-2jj" firstAttribute="centerX" secondItem="boK-oL-glb" secondAttribute="centerX" id="ice-ym-MMV"/>
@@ -108,6 +106,7 @@
                         <outlet property="settingsStack" destination="4ME-D4-joe" id="UVY-vM-Dsi"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUk-0u-NcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-292" y="-3548"/>
         </scene>
