@@ -80,6 +80,9 @@
                                     <constraint firstAttribute="width" constant="100" id="lQc-c8-i0t"/>
                                 </constraints>
                                 <state key="normal" title="- LOAD -"/>
+                                <connections>
+                                    <action selector="loadButtonOnClick:" destination="48e-J2-7pb" eventType="touchUpInside" id="9qt-UY-QTg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pedal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mh7-hT-GmH" userLabel="Title">
                                 <rect key="frame" x="149" y="73" width="77" height="39"/>

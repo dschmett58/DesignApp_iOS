@@ -20,6 +20,10 @@ class PedalViewController: UIViewController
     @IBOutlet weak var loadButton: UIButton!
     @IBOutlet weak var settingsStack: UIStackView!
     
+    // http post information
+    //let url = URL(string: "192.168.4.1")!
+    //let postData = "stuff for the pedal"        // test
+    
     // list of sliders and slider value labels
     var sliders = [UISlider]()
     var slabels = [UILabel]()
@@ -33,10 +37,32 @@ class PedalViewController: UIViewController
     }
 
     // LOAD button functionality
-//    @IBAction func loadButtonOnClick(_ sender: Any)
-//    {
-//        // publish and subscribe
-//        mqttClient.publish(string: "message", topic: "publish/topic/dan", qos: 2, retain: false)
+    @IBAction func loadButtonOnClick(_ sender: Any)
+    {
+        // publish and subscribe
+        for value in slabels {
+            mqttClient.publish(string: value.text ?? "nothing?", topic: "publish/topic/dan", qos: 2, retain: false)
+        }
+        // json POST
+        //Post(jsonData: postData.data(using: .ascii)!)
+    }
+    
+    // E's post function
+//    func Post(jsonData: Data) {
+//        if !jsonData.isEmpty {
+//            var request = URLRequest(url: url)
+//            request.httpMethod = "POST"
+//            request.httpBody = jsonData;
+//
+//            URLSession.shared.getAllTasks { (openTasks: [URLSessionTask]) in
+//                NSLog("open tasks: \(openTasks)")
+//            }
+//
+//            let task = URLSession.shared.dataTask(with: request, completionHandler: { (responseData: Data?, response: URLResponse?, error: Error?) in
+//                NSLog("\(response)")
+//            })
+//            task.resume()
+//        }
 //    }
 
     override func viewDidLoad()
@@ -44,12 +70,12 @@ class PedalViewController: UIViewController
         super.viewDidLoad()
 
         // set MQTT Client Configuration
-//        mqttConfig.onConnectCallback = { returnCode in
-//            NSLog("Return Code is \(returnCode.description)")
-//        }
-//        mqttConfig.onMessageCallback = { mqttMessage in
-//            NSLog("MQTT Message received: payload=\(mqttMessage.payloadString ?? "")")
-//        }
+        mqttConfig.onConnectCallback = { returnCode in
+            NSLog("Return Code is \(returnCode.description)")
+        }
+        mqttConfig.onMessageCallback = { mqttMessage in
+            NSLog("MQTT Message received: payload=\(mqttMessage.payloadString ?? "")")
+        }
 
         // disconnect - WHERE TO PUT THIS
         //mqttClient.disconnect()
