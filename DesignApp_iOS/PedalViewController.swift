@@ -12,6 +12,18 @@ import Moscapsule
 // GLOBAL
 var mqttConfig = MQTTConfig(clientId: "cid", host: "test.mosquitto.org", port: 1883, keepAlive: 60)
 var mqttClient = MQTT.newConnection(mqttConfig)
+var mqttTopic = "publish/topic/dan"
+var pedalNameMap: [String] =
+[
+    "Distortion",
+    "Overdrive",
+    "Fuzz",
+    "Delay",
+    "Tremolo",
+    "Echo",
+    "Chorus",
+    "Octave"
+];
 
 class PedalViewController: UIViewController
 {
@@ -27,6 +39,7 @@ class PedalViewController: UIViewController
     // list of sliders and slider value labels
     var sliders = [UISlider]()
     var slabels = [UILabel]()
+    var snames  = [UILabel]()
     
     // update value label with slider value
     @objc func sliderValueChanged(sender: UISlider)
@@ -39,10 +52,19 @@ class PedalViewController: UIViewController
     // LOAD button functionality
     @IBAction func loadButtonOnClick(_ sender: Any)
     {
-        // publish and subscribe
-        for value in slabels {
-            mqttClient.publish(string: value.text ?? "nothing?", topic: "publish/topic/dan", qos: 2, retain: false)
+        // build string to send
+        var info = String(pedalNameMap.firstIndex(of: pedalName.text ?? "none")!) + ":"
+        for i in 0...(slabels.count-1) {
+            //info += (snames[i].text ?? "--") + ", "
+            info += (slabels[i].text ?? "--")
+            if(i<slabels.count-1) {
+                info += ","
+            }
         }
+    
+        // publish via MQTT
+        mqttClient.publish(string: info, topic: mqttTopic, qos: 2, retain: false)
+        
         // json POST
         //Post(jsonData: postData.data(using: .ascii)!)
     }
@@ -159,5 +181,6 @@ class PedalViewController: UIViewController
         settingsStack.addArrangedSubview(setting)
         
         // update setting value? - TODO
+        snames.append(settingLabel)
     }
 }
