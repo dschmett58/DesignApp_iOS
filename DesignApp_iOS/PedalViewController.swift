@@ -53,15 +53,16 @@ class PedalViewController: UIViewController
     @IBAction func loadButtonOnClick(_ sender: Any)
     {
         // build string to send
-        var info = String(pedalNameMap.firstIndex(of: pedalName.text ?? "none")!) // select pedal index
+        var info = String(pedalNameMap.firstIndex(of: pedalName.text ?? "none")!) + ":" // select pedal index
         for i in 0...(slabels.count-1) {
             //info += (snames[i].text ?? "--") + ", "     // setting names
-            info += "<" + (slabels[i].text ?? "0") + ">"           // setting values
+            info += (slabels[i].text ?? "0") + ","           // setting values
         }
         info += "."
     
         // publish via MQTT
         mqttClient.publish(string: info, topic: mqttTopic, qos: 2, retain: false)
+        //print(info)
         
         // json POST
         //Post(jsonData: postData.data(using: .ascii)!)
@@ -122,7 +123,7 @@ class PedalViewController: UIViewController
                 addSetting(name: "Sustain")
                 break;
             case "Tremolo":
-                addSetting(name: "Speed")
+                addSetting(name: "Speed", minval: 1, maxval: 10)
                 break;
             case "Echo":
                 addSetting(name: "Time")
@@ -142,7 +143,7 @@ class PedalViewController: UIViewController
         }
     }
     
-    func addSetting(name: String)
+    func addSetting(name: String, minval: Float = 1, maxval: Float = 100)
     {
         // create settingLabel
         let settingLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 64, height: 32))
@@ -152,15 +153,15 @@ class PedalViewController: UIViewController
         
         // create valueSlider
         let valueSlider = UISlider(frame: CGRect(x: 0, y: 0, width: 128, height: 32))
-        valueSlider.minimumValue = 0
-        valueSlider.maximumValue = 100
-        valueSlider.value = 50
+        valueSlider.minimumValue = minval
+        valueSlider.maximumValue = maxval
+        valueSlider.value = (maxval-minval+1)/2
         valueSlider.addTarget(self, action: #selector(sliderValueChanged(sender:)), for: .valueChanged)
         sliders.append(valueSlider)
         
         // create valueLabel
         let valueLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 64, height: 32))
-        valueLabel.text = "50"
+        valueLabel.text = String(Int(valueSlider.value))
         valueLabel.textAlignment = .left
         valueLabel.addConstraint(NSLayoutConstraint.init(item: valueLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 64))
         slabels.append(valueLabel)
