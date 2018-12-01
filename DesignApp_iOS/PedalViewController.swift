@@ -53,14 +53,12 @@ class PedalViewController: UIViewController
     @IBAction func loadButtonOnClick(_ sender: Any)
     {
         // build string to send
-        var info = String(pedalNameMap.firstIndex(of: pedalName.text ?? "none")!) + ":"
+        var info = String(pedalNameMap.firstIndex(of: pedalName.text ?? "none")!) // select pedal index
         for i in 0...(slabels.count-1) {
-            //info += (snames[i].text ?? "--") + ", "
-            info += (slabels[i].text ?? "--")
-            if(i<slabels.count-1) {
-                info += ","
-            }
+            //info += (snames[i].text ?? "--") + ", "     // setting names
+            info += "<" + (slabels[i].text ?? "0") + ">"           // setting values
         }
+        info += "."
     
         // publish via MQTT
         mqttClient.publish(string: info, topic: mqttTopic, qos: 2, retain: false)
