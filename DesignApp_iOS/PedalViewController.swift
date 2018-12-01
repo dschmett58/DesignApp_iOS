@@ -108,35 +108,29 @@ class PedalViewController: UIViewController
         switch(currentPedal)
         {
             case "Distortion":
-                addSetting(name: "setting1")
+                addSetting(name: "Thresh", minval: 4500, maxval: 10000)
                 break;
             case "Overdrive":
-                addSetting(name: "setting1")
+                addSetting(name: "--")
                 break;
             case "Fuzz":
-                addSetting(name: "Cutoff")
-                addSetting(name: "Ceiling")
+                addSetting(name: "Thresh", minval: 4000, maxval: 5000)
                 break;
-
             case "Delay":
-                addSetting(name: "Time")
-                addSetting(name: "Sustain")
+                addSetting(name: "--")
                 break;
             case "Tremolo":
                 addSetting(name: "Speed", minval: 1, maxval: 10)
                 break;
             case "Echo":
-                addSetting(name: "Time")
-                addSetting(name: "Sustain")
+                addSetting(name: "--")
                 break;
-
             case "Chorus":
-                addSetting(name: "setting1")
+                addSetting(name: "--")
                 break;
             case "Octave":
-                addSetting(name: "setting1")
+                addSetting(name: "Depth", minval: 0, maxval: 50)
                 break;
-
             default:
                 addSetting(name: "nothing")
                 break;
