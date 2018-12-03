@@ -124,7 +124,8 @@ class PedalViewController: UIViewController
                 addSetting(name: "Ceiling", minval: 10000, maxval: 32768, avgval: fuzz_ceil)
                 break;
             case "Delay":   // unused (too big for Arduino memory)
-                addSetting(name: "--", minval: 0, maxval: 0, avgval: 0)
+                addSetting(name: "Time", minval: 0, maxval: 2, avgval: 1)
+                addSetting(name: "Feedback", minval: 0, maxval: 2, avgval: 1)
                 break;
             case "Tremolo":
                 addSetting(name: "Speed", minval: 1, maxval: 10, avgval: trem_speed)
@@ -133,6 +134,7 @@ class PedalViewController: UIViewController
                 addSetting(name: "Depth", minval: 0, maxval: 50, avgval: octave_depth)
                 break;
             case "Clean":
+                addSetting(name: "none", minval: 0, maxval: 0, avgval: 0)
                 break;
             default:
                 break;
