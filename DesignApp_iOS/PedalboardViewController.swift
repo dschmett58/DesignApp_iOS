@@ -16,17 +16,17 @@ var currentPedal = "(select a pedal)"
     // PEDAL NAMES
     let pedalNames: [[String]] =
         [
-            ["Distortion", "Overdrive", "Fuzz"],
-            ["Delay", "Tremolo", "Echo"],
-            ["Chorus", "Octave"]
+            ["Distortion", "Fuzz"],
+            ["Delay", "Tremolo"],
+            ["Octave", "Clean"]
     ]
     
     // PEDAL ICONS
     let pedalIcons: [[UIImage]] =
         [
-            [#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion")],
-            [#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion")],
-            [#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Distortion")]
+            [#imageLiteral(resourceName: "Distortion"),#imageLiteral(resourceName: "Fuzz")],
+            [#imageLiteral(resourceName: "Delay"),#imageLiteral(resourceName: "Tremolo")],
+            [#imageLiteral(resourceName: "Octave"),#imageLiteral(resourceName: "Clean")]
     ]
     
     // SECTION num
@@ -70,8 +70,8 @@ var currentPedal = "(select a pedal)"
             section_title = "Modulations"
             break
         case 2:
-            section_title = "Weird Shit"
-        //break;
+            section_title = "Miscellaneous"
+            break;
         default:
             break
         }

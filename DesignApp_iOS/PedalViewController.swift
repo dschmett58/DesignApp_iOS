@@ -16,27 +16,33 @@ var mqttTopic = "publish/topic/dan"
 var pedalNameMap: [String] =
 [
     "Distortion",
-    "Overdrive",
     "Fuzz",
     "Delay",
     "Tremolo",
-    "Echo",
-    "Chorus",
-    "Octave"
+    "Octave",
+    "Clean"
 ];
+
+var dist_thresh = Float(5000);
+
+var fuzz_thresh = Float(4500);
+var fuzz_ceil = Float(32768);
+
+//var delay_time;
+//var delay_feedback;
+
+var trem_speed = Float(1);
+
+var octave_depth = Float(10);
 
 class PedalViewController: UIViewController
 {
-    // label for slider value
+    // GUI elements
     @IBOutlet weak var pedalName: UILabel!
     @IBOutlet weak var loadButton: UIButton!
     @IBOutlet weak var settingsStack: UIStackView!
     
-    // http post information
-    //let url = URL(string: "192.168.4.1")!
-    //let postData = "stuff for the pedal"        // test
-    
-    // list of sliders and slider value labels
+    // list of sliders, slider value labels, and setting names
     var sliders = [UISlider]()
     var slabels = [UILabel]()
     var snames  = [UILabel]()
@@ -53,39 +59,42 @@ class PedalViewController: UIViewController
     @IBAction func loadButtonOnClick(_ sender: Any)
     {
         // build string to send
-        var info = String(pedalNameMap.firstIndex(of: pedalName.text ?? "none")!) + ":" // select pedal index
+        let pedalnum = pedalNameMap.firstIndex(of: pedalName.text ?? "none")!
+        var info = String(pedalnum) + ":" // select pedal index
         for i in 0...(slabels.count-1) {
-            //info += (snames[i].text ?? "--") + ", "     // setting names
             info += (slabels[i].text ?? "0") + ","           // setting values
         }
         info += "."
     
         // publish via MQTT
         mqttClient.publish(string: info, topic: mqttTopic, qos: 2, retain: false)
-        //print(info)
         
-        // json POST
-        //Post(jsonData: postData.data(using: .ascii)!)
+        // set global var (remember setting)
+        switch (pedalnum)
+        {
+            case 0:
+                dist_thresh = Float(slabels[0].text!)!
+                break;
+            case 1:
+                fuzz_thresh = Float(slabels[0].text!)!
+                fuzz_ceil = Float(slabels[1].text!)!
+                break;
+            case 2:
+                break;
+            case 3:
+                trem_speed = Float(slabels[0].text!)!
+                break;
+            case 4:
+                octave_depth = Float(slabels[0].text!)!
+                break;
+            case 5:
+                break;
+            default:
+                break;
+        }
     }
-    
-    // E's post function
-//    func Post(jsonData: Data) {
-//        if !jsonData.isEmpty {
-//            var request = URLRequest(url: url)
-//            request.httpMethod = "POST"
-//            request.httpBody = jsonData;
-//
-//            URLSession.shared.getAllTasks { (openTasks: [URLSessionTask]) in
-//                NSLog("open tasks: \(openTasks)")
-//            }
-//
-//            let task = URLSession.shared.dataTask(with: request, completionHandler: { (responseData: Data?, response: URLResponse?, error: Error?) in
-//                NSLog("\(response)")
-//            })
-//            task.resume()
-//        }
-//    }
 
+    // PEDAL SELECT functionality (initiate MQTT connection, create settings GUI)
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -108,38 +117,32 @@ class PedalViewController: UIViewController
         switch(currentPedal)
         {
             case "Distortion":
-                addSetting(name: "Thresh", minval: 4500, maxval: 10000)
-                break;
-            case "Overdrive":
-                addSetting(name: "--")
+                addSetting(name: "Thresh", minval: 4500, maxval: 10000, avgval: dist_thresh)
                 break;
             case "Fuzz":
-                addSetting(name: "Thresh", minval: 4000, maxval: 5000)
+                addSetting(name: "Thresh", minval: 4000, maxval: 5000, avgval: fuzz_thresh)
+                addSetting(name: "Ceiling", minval: 10000, maxval: 32768, avgval: fuzz_ceil)
                 break;
-            case "Delay":
-                addSetting(name: "--")
+            case "Delay":   // unused (too big for Arduino memory)
+                addSetting(name: "--", minval: 0, maxval: 0, avgval: 0)
                 break;
             case "Tremolo":
-                addSetting(name: "Speed", minval: 1, maxval: 10)
-                break;
-            case "Echo":
-                addSetting(name: "--")
-                break;
-            case "Chorus":
-                addSetting(name: "--")
+                addSetting(name: "Speed", minval: 1, maxval: 10, avgval: trem_speed)
                 break;
             case "Octave":
-                addSetting(name: "Depth", minval: 0, maxval: 50)
+                addSetting(name: "Depth", minval: 0, maxval: 50, avgval: octave_depth)
+                break;
+            case "Clean":
                 break;
             default:
-                addSetting(name: "nothing")
                 break;
         }
     }
     
-    func addSetting(name: String, minval: Float = 1, maxval: Float = 100)
+    // create settings (GUI)
+    func addSetting(name: String, minval: Float, maxval: Float, avgval: Float)
     {
-        // create settingLabel
+        // create settingLabel (name of setting)
         let settingLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 64, height: 32))
         settingLabel.text = name
         settingLabel.textAlignment = .right
@@ -149,18 +152,18 @@ class PedalViewController: UIViewController
         let valueSlider = UISlider(frame: CGRect(x: 0, y: 0, width: 128, height: 32))
         valueSlider.minimumValue = minval
         valueSlider.maximumValue = maxval
-        valueSlider.value = (maxval-minval+1)/2
+        valueSlider.value = avgval
         valueSlider.addTarget(self, action: #selector(sliderValueChanged(sender:)), for: .valueChanged)
         sliders.append(valueSlider)
         
-        // create valueLabel
+        // create valueLabel (value of slider)
         let valueLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 64, height: 32))
         valueLabel.text = String(Int(valueSlider.value))
         valueLabel.textAlignment = .left
         valueLabel.addConstraint(NSLayoutConstraint.init(item: valueLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 64))
         slabels.append(valueLabel)
         
-        // create stack for first setting
+        // create horiz. stack for first setting
         let setting = UIStackView(arrangedSubviews: [settingLabel,valueSlider,valueLabel])
         setting.axis = .horizontal
         setting.distribution = .fill
@@ -170,10 +173,10 @@ class PedalViewController: UIViewController
         setting.translatesAutoresizingMaskIntoConstraints = false
         //setting.addConstraint(NSLayoutConstraint.init(item: setting, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 32))
         
-        // add first setting to settingsStack
+        // add setting to vert. settingsStack
         settingsStack.addArrangedSubview(setting)
         
-        // update setting value? - TODO
+        // update setting name
         snames.append(settingLabel)
     }
 }
